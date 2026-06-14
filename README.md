@@ -7,10 +7,20 @@ terhadap kebijakan *Work From Home* (WFH) ASN pada hari Jumat.
 
 | File | Keterangan |
 |------|-----------|
-| `scrape_wfh_asn_colab.ipynb` | **Notebook Google Colab** siap pakai — scraping historis tanpa API (snscrape) + analisis sentimen IndoBERT. |
-| `scrape_snscrape.py` | Script scraping data historis tanpa API (untuk dijalankan di komputer lokal). |
+| `scrape_wfh_asn_harvest_colab.ipynb` | **Notebook Colab (REKOMENDASI)** — crawling historis >2000 tweet via `tweet-harvest` (pakai `auth_token`, tanpa API developer). |
+| `scrape_wfh_asn_api_colab.ipynb` | Notebook Colab versi **API resmi X** (tweepy + Bearer Token). |
+| `scrape_wfh_asn_colab.ipynb` | Notebook Colab versi **snscrape** (tanpa API, sering diblokir di Colab). |
+| `scrape_snscrape.py` | Script scraping historis tanpa API (untuk dijalankan di komputer lokal). |
 | `scrape_x.py` | Script scraping via X API v2 resmi (butuh Bearer Token). |
 | `analyze_sentiment.py` | Script analisis sentimen (positif/netral/negatif) memakai model IndoBERT. |
+
+## Perbandingan Metode Scraping
+
+| Metode | API/Token | Historis | Volume besar | Stabil di Colab | Sesuai ToS |
+|--------|-----------|----------|--------------|-----------------|------------|
+| tweet-harvest | `auth_token` (cookie login) | ✅ | ✅ >2000 | ✅ | ⚠️ Tidak |
+| API resmi (tweepy) | Bearer Token (developer) | ❌ 7 hari | ❌ (gratis) | ✅ | ✅ Ya |
+| snscrape | Tidak perlu | ✅ | ✅ | ⚠️ Sering diblokir | ⚠️ Tidak |
 
 ## Cara Cepat (Google Colab)
 
